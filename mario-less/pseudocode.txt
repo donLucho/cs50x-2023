@@ -1,0 +1,106 @@
+####################
+left to right, "descending staircase" effect
+####################
+
+####################
+// TODO: prompt user for height for numbers between 1 and 8 of type integer
+
+    - Set both upper and lower limits of 1 and 8 respectively
+    - While prompt value is not between upper and lower limits, keep prompting
+    - With said value in hand, prepare to print a "descending" set of blocks (L to R) (e.g. - 1,2,3,4,5)
+
+####################
+// TODO: print hashes to screen
+
+  # The composition of the print logic is as follows and some inherent assumptions exist that need to be articulated:
+
+    - In the most basic sense, I am depending on the classic for loop:
+
+        for(initialize; check_condition; update)
+        {
+          // do this
+        }
+
+    - Using, for example, an upper limit of three (3), I am looking to achieve this:
+
+        #
+        ##
+        ###
+
+    - This model is constituted of one nested for loop contained within a second, outer parent and is the less complex of the two sibling exercises;
+
+  # This phase is the first result I came up with when I rehearsed this. Hand-written, chicken scratch is not transferrable. The handwritten pseudocode was a requisite and I limited the theory to 3 rows. See the code, as well. My draft, warm-up exercise for this version contains more detail that is better aided by the actual code. I have transferred it to the space below!
+
+####################
+Pseudocode expressed in natural language
+####################
+
+-------- --------
+Background
+-------- --------
+  - When the maximum number is 3 and the minimum number is 1, the following will apply.
+
+-------- --------
+First iteration.
+-------- --------
+  - When i is 1, outer condition satisfied since i of 1 is LTE to max 3, i EQ TO 1, increment outer i by 1 SUBSEQUENT TO RUNNING CONTENTS OF OUTER PARENTHETICAL EXPRESSION
+
+  - In the CONTENTS OF THE OUTER PARENTHETICAL EXPRESSION, j is 1, j of 1 is LTE to i of 1, inner condition satisfied, increment inner j by 1 SUBSEQUENT TO RUNNING CONTENTS OF INNER PARENTHETICAL EXPRESSION
+
+  - RUN CONTENTS OF INNER PARENTHETICAL EXPRESSION, print HASH 1 time, inner condition has concluded, SINCE j of 2 will NEVER be LTE to i of 1
+
+  - INNER PARENTHETICAL EXPRESSION has concluded, hence, add line break BELONGING TO the outer PARENTHETICAL EXPRESSION given that the outer condition is still applicable.
+
+  - Go back to the top of outer condition
+
+-------- --------
+Second iteration
+-------- --------
+
+  - When i is 2, outer condition satisfied since i of 2 is LTE to max 3, i EQ TO 2, increment outer i by 1 SUBSEQUENT TO RUNNING CONTENTS OF OUTER PARENTHETICAL EXPRESSION to i EQ 3
+
+  - In the CONTENTS OF THE OUTER PARENTHETICAL EXPRESSION, j is 1, j of 1 is LTE to i of 2, inner condition satisfied, increment inner j by 1 SUBSEQUENT TO RUNNING CONTENTS OF INNER PARENTHETICAL EXPRESSION
+
+  - RUN CONTENTS OF INNER PARENTHETICAL EXPRESSION, print HASH 1 time, BUT the inner condition still applies, go to beginning of inner condition, j EQ TO 2
+
+  - RUN INNER CONTENTS AGAIN, print ANOTHER HASH TO THIS SPECIFIC ROW and increment inner initializer until inner condition has concluded
+
+  - INNER PARENTHETICAL EXPRESSION has concluded, hence, add line break BELONGING TO the outer PARENTHETICAL EXPRESSION given that the outer condition is still applicable
+
+  - Go back to the top of outer condition
+
+  - As far as any qualifying iterations are concerned, the script will repeat the outer loop for as often as the outer condition is still valid; and, the script will repeat the inner loop until condition is not met.
+
+-------- --------
+Final third iteration.
+-------- --------
+
+  - When i is 3, outer condition satisfied since i of 3 is LTE to max 3, i EQ TO 3, increment outer i by 1 SUBSEQUENT TO RUNNING CONTENTS OF OUTER PARENTHETICAL EXPRESSION to i EQ 4
+
+  - In the CONTENTS OF THE OUTER PARENTHETICAL EXPRESSION, j is 1, j of 1 is LTE to i of 3, inner condition satisfied, increment inner j by 1 SUBSEQUENT TO RUNNING CONTENTS OF INNER PARENTHETICAL EXPRESSION
+
+  - RUN CONTENTS OF INNER PARENTHETICAL EXPRESSION, print HASH 1 time, BUT the inner condition still applies, go to beginning of inner condition, j EQ TO 2
+
+  - In the CONTENTS OF THE OUTER PARENTHETICAL EXPRESSION, j is 2, j of 2 is LTE to i of 3, inner condition satisfied, increment inner j by 1 SUBSEQUENT TO RUNNING CONTENTS OF INNER PARENTHETICAL EXPRESSION
+
+  - RUN CONTENTS OF INNER PARENTHETICAL EXPRESSION, print HASH 1 time, BUT the inner condition still applies, go to beginning of inner condition, j EQ TO 3
+
+  - In the CONTENTS OF THE OUTER PARENTHETICAL EXPRESSION, j is 3, j of 3 is LTE to i of 3, inner condition satisfied, increment inner j by 1 SUBSEQUENT TO RUNNING CONTENTS OF INNER PARENTHETICAL EXPRESSION
+
+  - RUN CONTENTS OF INNER PARENTHETICAL EXPRESSION, print HASH 1 FINAL time, AND go to beginning of inner condition, j EQ TO 4
+
+  - RUN INNER CONTENTS AGAIN, print ANOTHER HASH TO THIS SPECIFIC ROW and increment inner initializer until inner condition has concluded
+
+  - INNER PARENTHETICAL EXPRESSION has concluded, SINCE j of 4 will NEVER be LTE to i of 3, hence, add line break BELONGING TO the outer PARENTHETICAL EXPRESSION given that the outer condition is still applicable
+
+  - Go back to the top of outer condition
+
+-------- --------
+Full satisfaction and graceful termination
+-------- --------
+
+  - When i is 4, the outer condition IS NOT MET since i of 4 IS NOT LTE to 3, outer i IS NOT incremented, and i of 4 is GT the limit of 3
+
+####################
+BADA-BOOM!!! DONEZO!
+####################
