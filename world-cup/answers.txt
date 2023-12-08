@@ -1,0 +1,27 @@
+Required Lab(s) 6 by Luis Artavia - tournament exercise - answers.txt
+draft processed on: September 05, 2023
+submitted for grade on: September 05, 2023
+
+Times:
+
+10 simulations:        0m0.049s
+100 simulations:       0m0.051s
+1000 simulations:      0m0.073s
+10000 simulations:     0m0.291s
+100000 simulations:    0m2.391s
+1000000 simulations:  0m23.596s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+- In terms of 10 SIMs, I did not expect see only SIX 'counts'; and, the first four finalists each had 20% probability and the latter two each had 10% probability.
+- Then, with 100 SIMs there were only TWELVE 'counts'; re-running this 'tourno' revealed that it would unequivocally be a toss-up between the strongest three participants for 1st, 2nd and 3rd places depending on the roll of the dice.
+- With the original value of 1000 SIMs, ditto the above: meaning that it was similarly a three-way race for for 1st, 2nd and 3rd places between the strongest three participants.
+- With 10000 SIMs, the hiccup in printing to console was more pronounced than in the previous cases. Yet despite the re-runs in CLI (command-line-interface), the order between 1st, 2nd and 3rd places never changed (first was always first, second was second, third was third)
+- With 100000 SIMs, the delay became more noticeable given that "we" had just breached two (2) whole seconds. And, the first four slots were constant in their order while more or less a battle-royale took place among the other participants within reason;
+- With 1000000 SIMs, upon running three tests, sixth and seventh most potent participants always duked it out for sixth place, while first through fifth remained constant and eighth through sixteenth were constant, too.
+- In hindsight, if you want to **reduce ambivalence**, then, 1000000 simulations (SIMs) is the way to go; if you want to achieve **marginal realism** and find your compromising 'sweet spot', then, you could safely wager on 100000 simulations. For remote connectivity, even the figure of 100000 could be an issue;
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?:
+- Again if remote connectivity is an issue or other factors that can impact total run-time exist, then, 100000 simulations could get you by. But if the goal is to present data in good faith knowing that quality should not be compromised, 1000000 (one million) simulations is the way to go, bar-none.
