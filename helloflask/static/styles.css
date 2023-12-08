@@ -1,0 +1,32 @@
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: rgb(var(--bs-tertiary-color-rgb));
+}
+
+.custom-centered-footer {
+    text-align: center;
+    margin-top: -1%;
+}
+
+.custom-hideous-highlight {
+    color: yellow;
+    text-shadow: 0 .0625em 0 rgba(3, 108, 127, .9);
+}
+
+.custom-supplementary-padding {
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+}
+
+.custom-centered-colspan {
+    text-align: center;
+}
+
+
+/*
+Optional Lab 9 by Luis Artavia - helloflask
+draft processed on: October 03, 2023
+Composed on: October 03, 2023
+Practice document not intended for evaluation
+*/

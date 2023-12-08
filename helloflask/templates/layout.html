@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Week 8 Problem Set">
+        <title>Hello, Flask · CS50X Week 9 Optional Lab</title>
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="/static/assets/img/favicons/favicon.ico">
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body class="d-flex flex-column h-100">
+        <header data-bs-theme="dark">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/hoochie-mama.html">Optional Lab #9 by Luis</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                <a class="nav-link" href="color.html">Color</a>
+              </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="mt-5">Hello, Flask</h1>
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer mt-auto py-3 bg-body-tertiary custom-centered-footer">
+            <div class="container">
+                <span class="text-body-secondary">Web experience provided by Luis Artavia<br>Made in Costa Rica | 2023</span>
+            </div>
+        </footer>
+
+        <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/main.js"></script>
+
+    </body>
+
+</html>
+
+<!--
+Optional Lab 9 by Luis Artavia - helloflask
+draft processed on: October 03, 2023
+Composed on: October 03, 2023
+Practice document not intended for evaluation
+-->

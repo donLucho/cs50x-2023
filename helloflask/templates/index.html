@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- <p class="lead">Next, we'll put a form here and get some <code class="small">POST</code> action!.</p> -->
+    <form action="/" method="post">
+        What is your favorite color?
+        <select name="color">
+            <option value="red">Harvard Crimson</option>
+            <option value="blue">Yale Blue</option>
+        </select>
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+<!--
+Optional Lab 9 by Luis Artavia - helloflask
+draft processed on: October 03, 2023
+Composed on: October 03, 2023
+Practice document not intended for evaluation
+-->
