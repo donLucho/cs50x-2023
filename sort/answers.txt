@@ -1,0 +1,30 @@
+// Required Lab(s) 3 by Luis Artavia - Sort exercise's answers.txt
+// draft processed on: July 13, 2023
+// submitted for grade on: July 14, 2023
+
+// Practice applying sorting algorithms
+
+//  beg.  ##############################
+
+/* ------
+SORT 1
+------ */
+sort1 uses: bubble
+
+How do you know?: I believe strongly that ./sort1 uses "bubble sort". Because when comparing each "selection sort" and "bubble sort", evidently "bubble sort" will typically fare better than its ignoble counterpart, the "selection sort". The clocked times here are one half of what the sort3 compiled file produces.
+
+/* ------
+SORT 2
+------ */
+sort2 uses: merge
+
+How do you know?: I believe strongly that ./sort2 uses "merge sort". Because given that random groups benefited the clock-time most (neither reversed nor sorted benefited), only merge sort stood out as the real winner. I can reasonably assert that ./sort2 uses "merge sort" under the hood.
+
+/* ------
+SORT 3
+------ */
+sort3 uses: selection
+
+How do you know?: I believe strongly that ./sort3 uses "selection sort". Because when comparing each "selection sort" and "bubble sort", evidently "selection sort" always fared worse than the "bubble sort". The clocked times here are a multiple of two higher than in what the sort1 compiled file produces.
+
+//  end.  ##############################
