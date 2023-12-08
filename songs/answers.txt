@@ -1,0 +1,11 @@
+-- Required Lab(s) 7 by Luis Artavia - answers.txt
+-- draft processed on: September 15, 2023
+-- submitted for grade on: September 15, 2023
+
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+
+If I were to use Spotify (incidentally, I do not), I would characterize the user's audio aura as a set of data that could or could not show patterns of aggregated, trite data (yes, I said trite). These patterns could feasibly reveal the musical key or musical tempo of different songs by different artists that share the same key or tempo, for example, but by different artists.
+
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+
+Musical tastes are personal if you want to know the truth. For the better part of the past year, I could be on a mountain or in a valley emotionally speaking. That is, I could be mourning a personal loss or going through a break-up for the duration of the past year, and the tastes would not be representative of what I normally listen to when I am on a proverbial mountain as opposed to being in an emotional valley. I will concede that the data fields that are tracked (at least in this exercise) are valid even if they are capable of capturing the emotional state of a listener for a very limited time. Music to some people has no impact while to others it makes the world go around. Music is also intuitive, hence, it is based on experience. So if a listener becomes exposed to new music (e.g. - a result of traveling to other destinations far from home) and decides to add said song or whatever novel musical piece to their playlist, again, it's only a fad that the listener is going through.
