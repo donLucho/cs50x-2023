@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="header">
+        <h1>View One Record</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+            {% if person %}
+                <div>
+                    <h2>{{ person[0].name }}</h2>
+                    <p>Month: <code>{{ person[0].month }}</code></p>
+                    <p>Day: <code>{{ person[0].day }}</code></p>
+                    <p><a href="/edit/{{ person[0].id }}">Edit Record</a></p>
+                </div>
+                <p><a href="/">Go back</a></p>
+            {% else %}
+                <p>You are wrong. Go <a href="/">back</a> now!</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+<!--
+Required Lab 9 by Luis Artavia - birthdays
+draft processed on: October 04, 2023 and October 05, 2023
+submitted for grade on: October 05, 2023
+-->

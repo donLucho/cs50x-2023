@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="header">
+        <h1>Birthdays</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+
+            <h2>Add a Birthday</h2>
+        <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+            <form action="/" method="post">
+                <input type="text" name="name" placeholder="Enter a name" />
+                <input type="number" name="month" placeholder="Month (e.g. 1 through 12)" min="1" max="12" required />
+                <input type="number" name="day" placeholder="Day (e.g. 1 through 31)" min="1" max="31" required />
+                <input type="submit" value="Submit" />
+            </form>
+            <div>
+                {% if derrplist %}
+                    {% if derrplist|length == 1 %}
+                        <p>There is at least {{ derrplist|length }} mistake:</p>
+                    {% else %}
+                        <p>There are {{ derrplist|length }} mistakes:</p>
+                    {% endif %}
+
+                    <ul style="color: red; text-transform: uppercase; font-style: italic; list-style: none;">
+                        {% for bork in derrplist %}
+                            <li>{{ bork }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="section">
+
+            <h2>All Birthdays</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Birthday</th>
+                        <th>View Record</th>
+                        <th>Delete Record</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                    {% for bday in birthdays %}
+                        <tr style="text-align: center;">
+                            <td>{{ bday.name }}</td>
+                            <td>{{ bday.month }}/{{ bday.day }}</td>
+                            <td>View <a href="/view/{{bday.id}}">{{bday.name}}</a></td>
+                            <td>
+                                <form action="/remove" method="post">
+                                    <input name="id" type="hidden" value="{{ bday.id }}">
+                                    <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr style="text-align: center;">
+                            <td colspan="4">
+                                There are no records at this time!
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+<!--
+Required Lab 9 by Luis Artavia - birthdays
+draft processed on: October 04, 2023 and October 05, 2023
+submitted for grade on: October 05, 2023
+-->
