@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+
+{% block main %}
+    {% if authorized_user %}
+        <div class="row">
+            <div class="mb-3">
+                <h1>User dashboard</h1>
+            </div>
+            <div class="mb-3">
+                <p>User name: <code>{{ authorized_user[0].username }}</code></p>
+                <p>Cash on hand: <code>{{ authorized_user[0].cash|usd }}</code></p>
+            </div>
+        </div>
+    {% endif %}
+    {% if mapped_symbols | length > 0 %}
+        <div class="row">
+            <form action="/sell" method="post">
+                <fieldset>
+                    <legend>Sell shares</legend>
+                    <div class="mb-3">
+                        <label for="symbol" class="form-label">Choose your stock</label>
+                        <select autofocus id="symbol" name="symbol" class="form-select form-control mx-auto w-auto" aria-label="Sell your shares of stock">
+                            <option disabled selected>Select ticker symbol</option>
+                            {% for item in mapped_symbols %}
+                                <option value="{{ item }}">{{ item }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="shares" class="form-label">Enter number shares</label>
+                        <input autocomplete="off" class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Enter positive integer" type="text" />
+                    </div>
+                    <button class="btn btn-primary" type="submit">Sell</button>
+                </fieldset>
+            </form>
+        </div>
+    {% elif mapped_symbols | length == 0 %}
+        <div class="row">
+            <div class="mb-3">
+                <h2 class="lead">You must be a shareholder to sell stocks</h2>
+                <p class="lead">You do not own any stocks at this time!</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+<!--
+    Required Problem set 9 by Luis Artavia - finance
+    draft processed on: October 08, 2023, October 15, 2023 and October 16, 2023
+    submitted for grade on: October 17, 2023
+-->

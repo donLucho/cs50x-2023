@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    {% if authorized_user %}
+        <div class="row">
+            <div class="mb-3">
+                <h1>User dashboard</h1>
+            </div>
+            <div class="mb-3">
+                <p>User name: <code>{{ authorized_user[0].username }}</code></p>
+                <p>Cash on hand: <code>{{ authorized_user[0].cash|usd }}</code></p>
+            </div>
+        </div>
+    {% endif %}
+    {% if session["user_id"] %}
+        <div class="row">
+            <form action="/buy" method="post">
+                <fieldset>
+                    <legend>Purchase stocks</legend>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text" />
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Enter positive integer" type="text" />
+                    </div>
+                    <button class="btn btn-primary" type="submit">Make Purchase</button>
+                </fieldset>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
+
+<!--
+    Required Problem set 9 by Luis Artavia - finance
+    draft processed on: October 08, 2023 and October 09, 2023
+    submitted for grade on: October 17, 2023
+-->

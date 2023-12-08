@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <form action="/quote" method="post">
+            <fieldset>
+                <legend>Obtain a quote</legend>
+                <div class="mb-3">
+                    <input autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+                </div>
+                <button class="btn btn-primary" type="submit">Enter Ticker Symbol</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
+        <div class="mb-3">
+            {% if symbol %}
+                <h1>{{ symbol.name }}</h1>
+                <p class="lead">{{ symbol.symbol }} <code>({{ symbol.price|usd }})</code></p>
+            {% else %}
+                <h1>No records entered</h1>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+<!--
+    Required Problem set 9 by Luis Artavia - finance
+    draft processed on: October 08, 2023
+    submitted for grade on: October 17, 2023
+-->

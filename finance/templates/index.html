@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+{#
+    <div class="row">
+        <div class="mb-3">
+            This is HOME! This is MEAN STREET!
+        </div>
+    </div>
+    #}
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="custom-centered-colspan">
+                        <th scope="col">{{ user_dictionary['username'] }}&rsquo;s stock portfolio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if stock_portfolio %}
+                        <tr class="custom-centered-colspan">
+                            <td class="lead">
+                                You are a shareholder of <strong>{{ stock_portfolio | length }}</strong>{% if stock_portfolio | length == 1 %} company {% elif stock_portfolio | length > 1 %} companies {% endif %}at this time!
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr class="custom-centered-colspan">
+                            <td class="lead">
+                                You do not own any stocks at this time!
+                            </td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% if stock_portfolio %}
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr class="custom-centered-colspan">
+                            <th scope="col" colspan="3">List of Individual Stocks</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Stock Symbol</th>
+                            <th scope="col">Number of Shares</th>
+                            <th scope="col">Current Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for key, value in stocks_dictionary.items() %}
+                            <tr style="text-align: center;">
+                                <td class="lead">
+                                    {{ value["symbol"] }}
+                                </td>
+                                <td class="lead">
+                                    {{ value["shares"] }}
+                                </td>
+                                <td class="lead">
+                                    {{ value["price"] | usd }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="custom-centered-colspan">
+                        <th scope="col" colspan="3">Total Assets</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Cash (Reserves On Hand)</th>
+                        <th scope="col">Stocks (Current Value)</th>
+                        <th scope="col">Total Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="lead">
+                        <td>{{ user_dictionary['cash_on_hand'] | usd }}</td>
+                        <td>{{ user_dictionary['current_value'] | usd }}</td>
+                        <th scope="row">{{ user_dictionary['grand_total'] | usd }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+
+<!--
+    Required Problem set 9 by Luis Artavia - finance
+    version 1 - draft processed on: October 08, 2023, October 11, 2023, October 14, 2023 and October 15, 2023
+    submitted for grade on: October 17, 2023
+-->

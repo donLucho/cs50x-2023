@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <form action="/add_cash" method="post">
+        <fieldset>
+            <legend>Add Cash</legend>
+            <div class="mb-3">
+                <label for="cash_amount_added" class="form-label">Enter Added Amount</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="cash_amount_added" name="cash_amount_added" placeholder="Enter dollar amount" type="text" />
+            </div>
+            <div class="mb-3">
+                <label for="amount_confirmed" class="form-label">Confirm Amount Added</label>
+                <input autocomplete="off" class="form-control mx-auto w-auto" id="amount_confirmed" name="amount_confirmed" placeholder="Confirm dollar amount" type="text" />
+            </div>
+            <button class="btn btn-primary" type="submit">Add Monies</button>
+        </fieldset>
+    </form>
+{% endblock %}
+
+<!--
+    Required Problem set 9 by Luis Artavia - finance
+    draft processed on: October 17, 2023
+    submitted for grade on: October 17, 2023
+-->

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="custom-centered-colspan">
+                        <th scope="col" colspan="4">History</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Symbol</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Shares</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if stock_portfolio | length == 0 %}
+                        <tr style="text-align: center;">
+                            <td class="lead" colspan="4">
+                                You have no history at this time.
+                            </td>
+                        </tr>
+                    {% elif stock_portfolio | length > 0 %}
+                        {% for dict in stock_portfolio %}
+                            <tr style="text-align: center;">
+                                <td class="lead">
+                                    {{ dict.transaction_date | datetime_format }}
+                                </td>
+                                <td class="lead">
+                                    {{ dict.symbol }}
+                                </td>
+                                <td class="lead">
+                                    {{ dict.stock_price | usd }}
+                                </td>
+                                <td class="lead">
+                                    {{ dict.shares }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+<!--
+    Required Problem set 9 by Luis Artavia - finance
+    draft processed on: October 08, 2023 and October 16, 2023
+    submitted for grade on: October 17, 2023
+-->
